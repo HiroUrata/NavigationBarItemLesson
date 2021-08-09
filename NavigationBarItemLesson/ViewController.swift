@@ -61,10 +61,10 @@ class ViewController: UIViewController {
 
         underViewButton = UIButton(frame: CGRect(x: underView.frame.minX + 10, y: yPoint + 10, width: underView.frame.size.height - 20, height:underView.frame.size.height - 20))
         
-        underViewButton.backgroundColor = UIColor.systemGreen
+        underViewButton.backgroundColor = UIColor.systemIndigo
         underViewButton.layer.cornerRadius = 15.0
         underViewButton.setTitle("Button", for: .normal)
-        underViewButton.setTitleColor(.black, for: .normal)
+        underViewButton.setTitleColor(.white, for: .normal)
         underViewButton.addTarget(self, action: #selector(test), for: .touchDown)
         
         view.addSubview(underViewButton)

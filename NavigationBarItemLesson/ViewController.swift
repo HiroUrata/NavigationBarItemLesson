@@ -9,11 +9,29 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var underView = UIView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(showUnderView))
+        
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+        
     }
 
+    @objc func showUnderView(){
+        
+        
+        
+    }
+    
 
+    
 }
 

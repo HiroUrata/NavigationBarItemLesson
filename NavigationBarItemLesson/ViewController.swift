@@ -16,6 +16,7 @@ class ViewController: UIViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(showUnderView))
         
+        createUnderView()
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -31,7 +32,23 @@ class ViewController: UIViewController {
         
     }
     
-
+    func createUnderView(){
+        
+        underView = UIView(frame: CGRect(x: view.frame.minX + 5, y: view.frame.maxY - (view.frame.maxY / 7.5), width: view.frame.size.width - 10, height: view.frame.size.height / 9))
+        
+        underView.layer.cornerRadius = 15.0
+        underView.backgroundColor = .systemGray2
+        underView.alpha = 0.35
+        
+        view.addSubview(underView)
+        
+    }
+    
+    func createButton(){
+        
+        
+        
+    }
     
 }
 

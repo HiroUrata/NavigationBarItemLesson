@@ -28,8 +28,16 @@ class ViewController: UIViewController {
 
     @objc func showUnderView(){
         
-        
-        
+        if underView.frame.origin.y == view.frame.maxY - (view.frame.maxY / 7.5){
+            
+            UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {self.underView.frame.origin.y = self.view.frame.maxY}, completion: nil)
+            
+        }else if underView.frame.origin.y == view.frame.maxY{
+            
+            UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {self.underView.frame.origin.y = self.view.frame.maxY - (self.view.frame.maxY / 7.5)}, completion: nil)
+
+            
+        }
     }
     
     func createUnderView(){
@@ -44,11 +52,4 @@ class ViewController: UIViewController {
         
     }
     
-    func createButton(){
-        
-        
-        
-    }
-    
 }
-

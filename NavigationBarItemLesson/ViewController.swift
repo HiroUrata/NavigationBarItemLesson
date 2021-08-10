@@ -15,9 +15,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(showUnderView))
+        navigationItem.rightBarButtonItems = [UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(showUnderView)),UIBarButtonItem(title: "下げる", style: .done, target: self, action: #selector(LowerView))]
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "下げる", style: .done, target: self, action: #selector(LowerView))
+        //navigationItem.rightBarButtonItem = UIBarButtonItem(title: "下げる", style: .done, target: self, action: #selector(LowerView))
         
         
     }
@@ -37,12 +37,24 @@ class ViewController: UIViewController {
             
             UIButton.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {self.underViewButton.frame.origin.y = self.underView.frame.origin.y + 10}, completion: nil)
             
-        }else if underView.frame.origin.y == self.view.frame.maxY - (self.view.frame.maxY / 7.5){
+        }//else if underView.frame.origin.y == self.view.frame.maxY - (self.view.frame.maxY / 7.5){
+//
+//            UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {self.underView.frame.origin.y = self.view.frame.maxY}, completion: nil)
+//
+//            UIButton.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {self.underViewButton.frame.origin.y = self.underView.frame.origin.y + 3}, completion: nil)
+//        }
+    }
+    
+    
+    @objc func LowerView(){
+        
+        if underView.frame.origin.y == self.view.frame.maxY - (self.view.frame.maxY / 7.5){
             
             UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {self.underView.frame.origin.y = self.view.frame.maxY}, completion: nil)
 
             UIButton.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {self.underViewButton.frame.origin.y = self.underView.frame.origin.y + 3}, completion: nil)
         }
+        
     }
     
     func createUnderView(){

@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         
         //navigationItem.rightBarButtonItem = UIBarButtonItem(title: "下げる", style: .done, target: self, action: #selector(LowerView))
         
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "左ボタン", style: .done, target: self, action: .none) //actionは.none
         
     }
     

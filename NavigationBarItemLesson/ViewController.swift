@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(showUnderView))
         
-        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "下げる", style: .done, target: self, action: #selector(LowerView))
         
         
     }
@@ -72,8 +72,10 @@ class ViewController: UIViewController {
 
     }
     
-    @objc func test(){
-        print("underViewButton押されました")
+    @objc func test(sender:UIButton){
+        
+          
+        
     }
     
 }
